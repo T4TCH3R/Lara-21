@@ -1,0 +1,84 @@
+/* ============================================================
+   PALETTE — GBC-inspired, forest/cream/earthy with red-hair accents
+   Change these to re-theme the whole game.
+   ============================================================ */
+:root {
+  --color-bg: #14241a;
+  --color-forest: #2f5233;
+  --color-forest-dark: #1c331f;
+  --color-forest-light: #4c7a4f;
+  --color-cream: #f4ead2;
+  --color-cream-dim: #e2d3ac;
+  --color-red: #b5473a;
+  --color-red-bright: #d9663f;
+  --color-brown: #6b4a34;
+  --color-brown-dark: #40301f;
+  --color-pink: #e6a5b8;
+  --color-hair: #c1502e;
+  --color-black: #16130f;
+  --color-white: #fdfaf3;
+  --color-water: #3a7ca5;
+  --color-water-dark: #2a5c7d;
+
+  --font-pixel: "Courier New", "Consolas", monospace;
+
+  --pixel-border-width: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-black);
+  color: var(--color-cream);
+  font-family: var(--font-pixel);
+  -webkit-font-smoothing: none;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+img,
+canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Chunky retro-RPG pixel border, used by dialogue box, HUD, menus */
+.pixel-panel {
+  background: var(--color-cream);
+  color: var(--color-black);
+  border: var(--pixel-border-width) solid var(--color-black);
+  box-shadow:
+    0 0 0 2px var(--color-cream),
+    0 0 0 6px var(--color-black),
+    4px 4px 0 6px rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+}
+
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-red-bright);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
